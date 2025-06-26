@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CurePet - Adopt a Pet</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f0f8ff;
+    }
+
+    /* Navbar styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #2a7b6f;
+      color: white;
+    }
+
+    .navbar h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      color: #2a7b6f;
+    }
+
+    h3 {
+      text-align: center;
+      color: #444;
+      margin-top: 10px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .animal-option {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border: 3px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.3s ease;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .animal-option:hover {
+      border-color: #2a7b6f;
+      transform: scale(1.05);
+    }
+
+    .animal-option img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .animal-option span {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      font-size: 18px;
+      padding: 5px 0;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h2>CurePet</h2>
+    <div class="nav-links">
+      <a href="file:///C:/Users/POOJA/Desktop/WDL_Project/home.html">Home</a>
+      <a href="file:///C:/Users/POOJA/Desktop/WDL_Project/about.html">About</a>
+      <a href="C:\Users\POOJA\Desktop\WDL_Project\contact.html"class="hover:text-yellow-300">Contact</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <h1>Welcome to CurePet - Adopt a Loving Friend</h1>
+  <h3>Choose the category you would like to know more about</h3>
+
+  <div class="container">
+    <a href="dog.html" class="animal-option">
+      <img src="dog1.jpg" alt="Dog">
+      <span>Dog</span>
+    </a>
+    <a href="cat.html" class="animal-option">
+      <img src="cat1.jpg" alt="Cat">
+      <span>Cat</span>
+    </a>
+    <a href="cow.html" class="animal-option">
+      <img src="cow1.webp" alt="Cow">
+      <span>Cow</span>
+    </a>
+    <a href="rabbit.html" class="animal-option">
+      <img src="rabbit1.jpg" alt="Rabbit">
+      <span>Rabbit</span>
+    </a>
+    <a href="birds.html" class="animal-option">
+      <img src="bird1.jpg" alt="Birds">
+      <span>Birds</span>
+    </a>
+  </div>
+
+</body>
+</html>
