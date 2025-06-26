@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rescued Animals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #45a049;
+            border-radius: 5px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .animal-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+
+        .animal-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .animal-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .animal-info {
+            flex: 1;
+        }
+
+        .animal-info h3 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .animal-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .active-page {
+            border-left: 5px solid #4CAF50;
+            padding-left: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Rescued Animals</h1>
+            <nav>
+                <a href="file:///C:/Users/POOJA/Desktop/WDL_Project/home.html">Home</a>
+                <a href="file:///C:/Users/POOJA/Desktop/WDL_Project/grroming/grooming1.html">Animals</a>
+                <a href="file:///C:/Users/POOJA/Desktop/WDL_Project/about.html">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Animal Card 1: MAYA (cow)-->
+        <div class="animal-card active-page">
+            <img src="C:\Users\POOJA\Desktop\WDL_Project\img1.jpg"alt="MAYA the cow">
+            <div class="animal-info">
+                <h3>Name: MAYA</h3>
+                <p>Species: Cow</p>
+                <p>Age: 5 years</p>
+                <p>Rescue Date: January 2025</p>
+                <p>Description: Friendly and energetic, loves to play fetch.</p>
+            </div>
+        </div>
+
+        <!-- Animal Card 2: VASUNDHARA (Cow) -->
+        <div class="animal-card">
+            <img src="C:\Users\POOJA\Desktop\WDL_Project\img2.jpg" alt="VASUNDHARA the cow">
+            <div class="animal-info">
+                <h3>Name: VASUNDHARA</h3>
+                <p>Species: Cow </p>
+                <p>Age: 4 years</p>
+                <p>Rescue Date: February 2025</p>
+                <p>Description: Calm and affectionate, enjoys napping in the sun.</p>
+            </div>
+        </div>
+
+        <!-- Animal Card 3: BELLA (Cat) -->
+        <div class="animal-card">
+            <img src="C:\Users\POOJA\Desktop\WDL_Project\img3.jpg" alt="Bella the Cat">
+            <div class="animal-info">
+                <h3>Name: Bella</h3>
+                <p>Species: Cat</p>
+                <p>Age: 1 year</p>
+                <p>Rescue Date: March 2025</p>
+                <p>Description: Curious and loves exploring new spaces.</p>
+            </div>
+        </div>
+
+        <!-- Animal Card 4: Luna (Cat) -->
+        <div class="animal-card">
+            <img src="C:\Users\POOJA\Desktop\WDL_Project\img4.jpg" alt="Luna the Cat">
+            <div class="animal-info">
+                <h3>Name: Luna</h3>
+                <p>Species: Cat</p>
+                <p>Age: 2 years</p>
+                <p>Rescue Date: April 2025</p>
+                <p>Description: Loyal and protective, great with kids.</p>
+            </div>
+        </div>
+
+        <!-- Animal Card 5: Oliver (Cat) -->
+        <div class="animal-card">
+            <img src="C:\Users\POOJA\Desktop\WDL_Project\img5.jpg" alt="Oliver the Cat">
+            <div class="animal-info">
+                <h3>Name: Oliver</h3>
+                <p>Species: Cat</p>
+                <p>Age: 5 years</p>
+                <p>Rescue Date: May 2024</p>
+                <p>Description: Independent but loves occasional cuddles.</p>
+            </div>
+        </div>
+
+        <!-- Animal Card 6: TOMMY (Dog) -->
+        <div class="animal-card">
+            <img src="C:\Users\POOJA\Desktop\WDL_Project\img6.jpg" alt="Tommy the Dog">
+            <div class="animal-info">
+                <h3>Name: TOMMY</h3>
+                <p>Species: Dog</p>
+                <p>Age: 2 years</p>
+                <p>Rescue Date: June 2024</p>
+                <p>Description: playful, enjoys walking.</p>
+            </div>
+        </div>
+
+        <!-- Animal Card 7: Rocky (Dog) -->
+        <div class="animal-card">
+            <img src="C:\Users\POOJA\Desktop\WDL_Project\img7.jpg" alt="Rocky the Dog">
+            <div class="animal-info">
+                <h3>Name: Rocky</h3>
+                <p>Species: Dog</p>
+                <p>Age: 6 years</p>
+                <p>Rescue Date: July 2024</p>
+                <p>Description: Strong and playful, loves long walks.</p>
+            </div>
+        </div>
+
+        <!-- Animal Card 8: Milo (Bird) -->
+        <div class="animal-card">
+            <img src="C:\Users\POOJA\Desktop\WDL_Project\img8.jpg" alt="MILO the Bird">
+            <div class="animal-info">
+                <h3>Name: MILO</h3>
+                <p>Species: Bird</p>
+                <p>Age: 1 year</p>
+                <p>Rescue Date: August 2024</p>
+                <p>Description: Social and loves being around others.</p>
+            </div>
+        </div>
+
+        <!-- Animal Card 9: Sophie (Cat) -->
+        <div class="animal-card">
+            <img src="C:\Users\POOJA\Desktop\WDL_Project\img9.jpg" alt="Sophie the Cat">
+            <div class="animal-info">
+                <h3>Name: Sophie</h3>
+                <p>Species: Cat</p>
+                <p>Age: 3 years</p>
+                <p>Rescue Date: September 2024</p>
+                <p>Description: Graceful and loves chasing laser pointers.</p>
+            </div>
+        </div>
+
+        <!-- Animal Card 10: Tucker (Dog) -->
+        <div class="animal-card">
+            <img src="C:\Users\POOJA\Desktop\WDL_Project\img10.jpg" alt="Tucker the Dog">
+            <div class="animal-info">
+                <h3>Name: Tucker</h3>
+                <p>Species: Dog</p>
+                <p>Age: 4 years</p>
+                <p>Rescue Date: October 2024</p>
+                <p>Description: Slow- playing and enjoys  in the sun.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

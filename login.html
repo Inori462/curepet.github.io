@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PetCure - Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f8e1f4, #d2f1ff);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navigation bar styling */
+    .navbar {
+      background-color: #ff5c5c;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 2rem;
+    }
+
+    .navbar .logo {
+      width: 50px; /* Adjust logo size */
+      height: 50px;
+      background-color: #fff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .navbar .logo img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .navbar .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .navbar .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .navbar .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .login-box {
+      background-color: #ffffff;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      max-width: 420px;
+      width: 100%;
+      margin: 2rem auto;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      color: #ff5c5c;
+      margin-bottom: 1.5rem;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 0.9rem;
+      background-color: #ff5c5c;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-box button:hover {
+      background-color: #e24c4c;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      display: none;
+    }
+
+    @media (max-width: 480px) {
+      .login-box {
+        margin: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <div class="logo">
+      <!-- You can add your logo here -->
+      <img src="C:\Users\POOJA\Desktop\WDL_Project\logo.jpg" alt="pet" />
+    </div>
+    <div class="nav-links">
+      <a href="file:///C:/Users/POOJA/Desktop/WDL_Project/home.html">Home</a>
+      <a href="file:///C:/Users/POOJA/Desktop/WDL_Project/about.html">About</a>
+      <a href="file:///C:/Users/POOJA/Desktop/WDL_Project/login.html">Login</a>
+      <a href="file:///C:/Users/POOJA/Desktop/WDL_Project/login.html">Register</a>
+    </div>
+  </div>
+
+  <!-- Login Box -->
+  <div class="login-box">
+    <h2>Welcome to PetCure 🐾</h2>
+    <div id="error-message" class="error-message"></div>
+    <form id="petcureLoginForm">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <input type="text" id="pincode" placeholder="Pincode (6 digits)" maxlength="6" required />
+      <button type="submit">Login / Register</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('petcureLoginForm');
+    const errorMessage = document.getElementById('error-message');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const pincode = document.getElementById('pincode').value.trim();
+
+      // Basic Validation
+      if (!name || !email || !password || !pincode) {
+        showError("Please fill in all the fields.");
+        return;
+      }
+
+      if (!/^\d{6}$/.test(pincode)) {
+        showError("Pincode must be a 6-digit number.");
+        return;
+      }
+
+      if (password.length < 6) {
+        showError("Password should be at least 6 characters.");
+        return;
+      }
+
+      // Simulated login/registration
+      errorMessage.style.display = "none";
+      alert(`Hello ${name}! You are logged in to PetCure! 🐶`);
+    });
+
+    function showError(message) {
+      errorMessage.textContent = message;
+      errorMessage.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>

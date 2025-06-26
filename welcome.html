@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cure Pet's - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background-color: #FAF1E6;
+      color: #333;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    /* Background Paw Pattern */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Paw-print.svg/1200px-Paw-print.svg.png');
+      background-repeat: repeat;
+      background-size: 60px;
+      opacity: 0.06;
+      transform: rotate(10deg) translateY(-10px);
+      z-index: 0;
+    }
+
+    nav, .hero-section, .content, footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    nav {
+      background-color: #E4EFE7;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 8px 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #99BC85;
+    }
+
+    .hero-section {
+      margin-top: 90px;
+      text-align: center;
+      padding: 20px;
+      background-color: #F0F8F6;
+    }
+
+    .know-more-btn {
+      background-color: #99BC85;
+      color: #fff;
+      padding: 12px 30px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .know-more-btn:hover {
+      background-color: #7e9b6d;
+      transform: translateY(-2px);
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+      background: #FDFAF6;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .content h1, .content h2, .content h3 {
+      color: #46775D;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .content p, .content li {
+      font-size: 1.1em;
+      color: #4a4a4a;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+
+    .card-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      flex: 1 1 250px;
+      background: #F6FFF8;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .testimonial {
+      background: #F0F8F6;
+    }
+
+    .cta {
+      background: #EDF7ED;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #99BC85;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .cta a:hover {
+      background-color: #7e9b6d;
+    }
+
+    footer {
+      background-color: #E4EFE7;
+      color: #333;
+      padding: 20px 0;
+      text-align: center;
+      width: 100%;
+      margin-top: 40px;
+    }
+
+    .social-links a {
+      color: #333;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #99BC85;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="C:\Users\POOJA\Desktop\WDL_Project\logo.jpg" alt="Pet">
+    </div>
+    <ul>
+      <li><a href="file:///C:/Users/POOJA/Desktop/WDL_Project/home.html">Home</a></li>
+      <li><a href="file:///C:/Users/POOJA/Desktop/WDL_Project/about.html">About</a></li>
+      <li><a href="file:///C:/Users/POOJA/Desktop/WDL_Project/login.html">Login</a></li>
+      <li><a href="file:///C:/Users/POOJA/Desktop/WDL_Project/login.html">Registration</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-section">
+    <h1>Welcome to Cure Pet's</h1>
+    <p>Your trusted partner in pet care, adoption, and veterinary support.</p>
+    <a href="about.html" class="know-more-btn">Know More</a>
+  </div>
+
+  <div class="content">
+    <h2>Our Services</h2>
+    <div class="card-group">
+      <div class="card">
+        <h3>Veterinary Care</h3>
+        <p>High-quality medical services from experienced professionals to keep your pets healthy and happy.</p>
+      </div>
+      <div class="card">
+        <h3>Pet Adoption</h3>
+        <p>Find loving homes for rescued pets through our trusted adoption programs and shelter partners.</p>
+      </div>
+      <div class="card">
+        <h3>Pet Education</h3>
+        <p>Access useful resources, tips, and workshops to better understand and care for your furry companions.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h2>Why Choose Cure Pet's?</h2>
+    <ul style="list-style: none; padding-left: 0;">
+      <li>Compassionate and skilled veterinary team</li>
+      <li>Collaboration with trusted shelters and NGOs</li>
+      <li>Transparent adoption and care programs</li>
+      <li>Community-first approach to pet well-being</li>
+      <li>Easily accessible resources and pet guides</li>
+    </

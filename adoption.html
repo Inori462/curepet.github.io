@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption Inquiry</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+            background-image: url('C:/Users/POOJA/Desktop/WDL_Project/adoption.jpg'); /* Use a relative or online path for deployment */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            background-color: #a1c4fd;
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            width: 100%;
+            background-color: rgba(51, 51, 51, 0.9);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #a5d6a7;
+        }
+
+        .form-container {
+            width: 350px;
+            max-width: 100%;
+            margin: 6rem auto 2rem auto; /* Extra top margin to avoid nav overlap */
+            padding: 2rem;
+            background: rgba(255, 245, 230, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .form-container:hover {
+            transform: translateY(-10px);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2e7d32;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            text-align: center;
+            color: #4caf50;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            margin-top: 1rem;
+            display: block;
+            color: #2e7d32;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 0.5rem;
+            border: none;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+            background: #f1f8e9;
+        }
+
+        button {
+            margin-top: 1.5rem;
+            padding: 12px;
+            background: linear-gradient(45deg, #4caf50, #66bb6a);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #388e3c, #4caf50);
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .form-container::before,
+        .form-container::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(76, 175, 80, 0.3), transparent);
+            z-index: 0;
+        }
+
+        .form-container::before {
+            top: -50px;
+            left: -50px;
+        }
+
+        .form-container::after {
+            bottom: -50px;
+            right: -50px;
+        }
+
+        form {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 480px) {
+            .form-container {
+                width: 90%;
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 0.5rem;
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">PetPal</div>
+        <div class="nav-links">
+            <a href="file:///C:/Users/POOJA/Desktop/WDL_Project/home.html">Home</a>
+            <a href="file:///C:/Users/POOJA/Desktop/WDL_Project/login.html">Login</a>
+            <a href="file:///C:/Users/POOJA/Desktop/WDL_Project/about.html">About</a>
+            <a href="file:///C:/Users/POOJA/Desktop/WDL_Project/login.html">Register</a>
+        </div>
+    </nav>
+
+    <div class="form-container">
+        <h2>Ready to Adopt a Furry Friend?</h2>
+        <h3>Tell us about your pet journey...</h3>
+
+        <form action="#">
+            <label for="selectOption">Have you ever petted an animal?</label>
+            <select id="selectOption" name="selectOption">
+                <option value="option1">Yes</option>
+                <option value="option2">No</option>
+            </select>
+
+            <label for="answer1">Which type of pet?</label>
+            <input type="text" id="answer1" name="answer1" placeholder="e.g., Dog, Cat, Bird">
+
+            <label for="answer2">Do you currently have a pet?</label>
+            <input type="text" id="answer2" name="answer2" placeholder="Your answer">
+
+            <button type="submit">Send Pawsome Info</button>
+        </form>
+    </div>
+</body>
+</html>

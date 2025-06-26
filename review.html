@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adoption Stories | Cure Pet's</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --dark-green: #5C6E58;
+      --light-green: #8AA899;
+      --yellow: #F2D349;
+      --light-bg: #F8F9FA;
+      --white: #FFFFFF;
+      --transition: all 0.3s ease;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+      --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+      --border-radius: 8px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--dark-green);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Navigation Styles */
+    nav {
+      background-color: var(--white);
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 45px;
+      width: auto;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--dark-green);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 0;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--yellow);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links .btn {
+      background-color: var(--yellow);
+      color: var(--dark-green);
+      padding: 10px 20px;
+      border-radius: var(--border-radius);
+      margin-left: 15px;
+    }
+
+    /* Page Content */
+    .page-content {
+      margin-top: 80px;
+    }
+
+    .reviews-hero {
+      padding: 80px 0;
+      background: linear-gradient(135deg, rgba(92, 110, 88, 0.9) 0%, rgba(138, 168, 153, 0.8) 100%);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .reviews-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    .reviews-hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .reviews-section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--dark-green);
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: var(--dark-green);
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.8;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .review-card {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-sm);
+      padding: 30px;
+      transition: var(--transition);
+    }
+
+    .review-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .reviewer-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 15px;
+      border: 2px solid var(--yellow);
+    }
+
+    .reviewer-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .reviewer-info h4 {
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+
+    .reviewer-info .adoption-date {
+      font-size: 0.85rem;
+      color: var(--light-green);
+    }
+
+    .pet-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .pet-photo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 10px;
+    }
+
+    .pet-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .pet-name {
+      font-weight: 600;
+      color: var(--dark-green);
+    }
+
+    .review-content {
+      margin-bottom: 15px;
+      color: var(--dark-green);
+    }
+
+    .review-rating {
+      color: var(--yellow);
+      margin-bottom: 10px;
+    }
+
+    .review-rating i {
+      margin-right: 3px;
+    }
+
+    .pet-type {
+      display: inline-block;
+      background-color: var(--light-green);
+      color: var(--white);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-top: 10px;
+    }
+
+    footer {
+      background-color: var(--dark-green);
+      color: var(--white);
+      padding: 60px 0 20px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .reviews-hero h1 {
+        font-size: 2.2rem;
+      }
+     
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="container">
+      <div class="logo">
+        <img src="C:\Users\POOJA\Desktop\WDL_Project\logo.jpg"alt="Cure Pet">
+      </div>
+      <ul class="nav-links">
+        <li><a href=file:///C:/Users/POOJA/Desktop/WDL_Project/home.html>Home</a></li>
+        <li><a href=file:///C:/Users/POOJA/Desktop/WDL_Project/about.html>About</a></li>
+        <li><a href="C:\Users\POOJA\Desktop\WDL_Project\contact.html">Contact</a></li>
+        <li><a href=file:///C:/Users/POOJA/Desktop/WDL_Project/review.html>Adoption Stories</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <section class="reviews-hero">
+      <div class="container">
+        <h1>Happy Adoption Stories</h1>
+        <p>Read heartwarming experiences from families who found their perfect companions through Cure Pet's</p>
+      </div>
+    </section>
+
+    <section class="reviews-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Pet Adoption Reviews</h2>
+          <p>Real stories from real families about their adoption journey with us</p>
+        </div>
+       
+        <div class="reviews-grid">
+          <!-- Review 1 -->
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">
+                <img src="https://bloximages.chicago2.vip.townnews.com/pressofatlanticcity.com/content/tncms/assets/v3/editorial/1/fe/1feb6996-f728-11e2-9273-0019bb2963f4/51f479404b91f.image.jpg" alt="Radha Patel">
+              </div>
+              <div class="reviewer-info">
+                <h4>Radha Patel</h4>
+                <span class="adoption-date">Adopted March 2024</span>
+              </div>
+            </div>
+            <div class="pet-info">
+              <div class="pet-photo">
+                <img src="https://www.mrnmrspet.com/Files/82022/61775202208311656590505.jpeg" alt="Max">
+              </div>
+              <span class="pet-name">Max</span>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="review-content">
+              <p>"The adoption process was so smooth with Cure Pet's. Max has brought so much joy to our family. The team was incredibly supportive throughout the entire process and even followed up after adoption to check on us."</p>
+            </div>
+            <span class="pet-type">Golden Retriever</span>
+          </div>
+         
+          <!-- Review 2 -->
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">
+                <img src="https://th.bing.com/th/id/OIP.R3gVs7Simm6sbneGWsIvtgHaLJ?rs=1&pid=ImgDetMain" alt="Manas Patil">
+              </div>
+              <div class="reviewer-info">
+                <h4>Manas Patil</h4>
+                <span class="adoption-date">Adopted January 2024</span>
+              </div>
+            </div>
+            <div class="pet-info">
+              <div class="pet-photo">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.jPU046WMFeSYYg-adPe6wgHaLH?rs=1&pid=ImgDetMain" alt="Luna">
+              </div>
+              <span class="pet-name">Luna</span>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="review-content">
+              <p>"Luna was a perfect match for our family. The staff at Cure Pet's took the time to understand our lifestyle and matched us with the ideal cat. Their post-adoption support is exceptional!"</p>
+            </div>
+            <span class="pet-type">Domestic Shorthair</span>
+          </div>
+         
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">
+                <img src="https://images.squarespace-cdn.com/content/v1/53fe1e26e4b0e51709f9758f/1646204678221-QFES84FLY1H5WDND4XCP/AD.jpg" alt="Lavanya Rajput">
+              </div>
+              <div class="reviewer-info">
+                <h4>Lavanya Rajput</h4>
+                <span class="adoption-date">Adopted November 2023</span>
+              </div>
+            </div>
+            <div class="pet-info">
+              <div class="pet-photo">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.oxMPnq2pSsRGAFhIRbDGRQHaLH?pid=ImgDet&w=192&h=288&c=7" alt="Buddy">
+              </div>
+              <span class="pet-name">Buddy</span>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <div class="review-content">
+              <p>"Buddy was rescued from a difficult situation, but you'd never know it now. The transformation in him has been amazing. Cure Pet's provided all his medical records and gave us great advice for his care."</p>
+            </div>
+            <span class="pet-type">Labrador Mix</span>
+          </div>
+         
+          <!-- Review 4 -->
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">
+                <img src="https://th.bing.com/th/id/R.2e6ed5ccee292f54c6c809244554fb9c?rik=VpcRkMqNfHxvNQ&riu=http%3a%2f%2fmulticomp.cs.cmu.edu%2fwp-content%2fuploads%2f2020%2f01%2fAmir.jpg&ehk=V%2bSnQHY%2bky691uHPzZTWrJnksCrmzpoosrF9QBfYtoQ%3d&risl=&pid=ImgRaw&r=0" alt="Danish Khan">
+              </div>
+              <div class="reviewer-info">
+                <h4>Danish Khan</h4>
+                <span class="adoption-date">Adopted August 2023</span>
+              </div>
+            </div>
+            <div class="pet-info">
+              <div class="pet-photo">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.nVIqGJPU3VkguoFAFY1iEAHaE8?w=1280&h=854&rs=1&pid=ImgDetMain" alt="Tiger">
+              </div>
+              <span class="pet-name">Tiger</span>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="review-content">
+              <p>"As first-time pet owners, we were nervous, but Cure Pet's made everything so easy.Tiger is the perfect addition to our home. The adoption counselor was patient with all our questions."</p>
+            </div>
+            <span class="pet-type">French Bulldog</span>
+          </div>
+         
+          <!-- Review 5 -->
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">
+                <img src="https://i1.rgstatic.net/ii/profile.image/976525755170816-1609833291473_Q512/Naima-Nisha.jpg" alt="Aarna Sharma">
+              </div>
+              <div class="reviewer-info">
+                <h4>Aarna Sharma</h4>
+                <span class="adoption-date">Adopted June 2023</span>
+              </div>
+            </div>
+            <div class="pet-info">
+              <div class="pet-photo">
+                <img src="https://a-z-animals.com/media/2023/07/shutterstock-1532493602-huge-licensed-scaled-1024x575.jpg" alt="Oliver">
+              </div>
+              <span class="pet-name">Oliver</span>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="review-content">
+              <p>"Oliver has been such a blessing. Cure Pet's was transparent about his history and needs. Their matching process is thorough - it's clear they really care about finding the right homes for their animals."</p>
+            </div>
+            <span class="pet-type">Siamese Cat</span>
+          </div>
+         
+          <!-- Review 6 -->
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">
+                <img src="https://thepersonage.com/wp-content/uploads/2020/10/Harish-Kalyan-Picture.jpg" alt="Ravindar Thappar">
+              </div>
+              <div class="reviewer-info">
+                <h4>Ravindar Thappar</h4>
+                <span class="adoption-date">Adopted April 2023</span>
+              </div>
+            </div>
+            <div class="pet-info">
+              <div class="pet-photo">
+                <img src="https://cdn.fotofits.com/petzlover/gallery/img/l/beagle-504449.jpg" alt="Bella">
+              </div>
+              <span class="pet-name">Bella</span>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <div class="review-content">
+              <p>"Bella is the sweetest dog we could have asked for. The adoption fee included all her vaccinations and spaying, which was a huge help. The only reason I didn't give 5 stars is because the paperwork took a bit long."</p>
+            </div>
+            <span class="pet-type">Beagle</span>
+          </div>
+         
+          <!-- Review 7 -->
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.dPITPy925HufY8CQUjCDPgHaHy?w=1461&h=1536&rs=1&pid=ImgDetMain" alt="Trisha Patel">
+              </div>
+              <div class="reviewer-info">
+                <h4>Trisha Patel</h4>
+                <span class="adoption-date">Adopted February 2023</span>
+              </div>
+            </div>
+            <div class="pet-info">
+              <div class="pet-photo">
+                <img src="https://i.pinimg.com/originals/b9/08/af/b908af5ab2a32870d9b1fba2c21f41e1.jpg" alt="Leo">
+              </div>
+              <span class="pet-name">Leo</span>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="review-content">
+              <p>"We adopted Leo as a companion for our other cat, and they became best friends immediately. Cure Pet's did a fantastic job assessing his personality to ensure he'd be a good match. Couldn't be happier!"</p>
+            </div>
+            <span class="pet-type">Maine Coon</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Cure Pet's. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

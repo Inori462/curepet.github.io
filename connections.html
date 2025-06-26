@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Connections | Cure Pet's</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --dark-green: #5C6E58;
+      --light-green: #8AA899;
+      --yellow: #F2D349;
+      --light-bg: #F8F9FA;
+      --white: #FFFFFF;
+      --transition: all 0.3s ease;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+      --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+      --border-radius: 8px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--dark-green);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Navigation Styles */
+    nav {
+      background-color: var(--white);
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 45px;
+      width: auto;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--dark-green);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 0;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--yellow);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links .btn {
+      background-color: var(--yellow);
+      color: var(--dark-green);
+      padding: 10px 20px;
+      border-radius: var(--border-radius);
+      margin-left: 15px;
+    }
+
+    /* Page Content */
+    .page-content {
+      margin-top: 80px;
+    }
+
+    .connections-hero {
+      padding: 80px 0;
+      background: linear-gradient(135deg, rgba(92, 110, 88, 0.9) 0%, rgba(138, 168, 153, 0.8) 100%);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .connections-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    .connections-hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .partners-section {
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .section-title {
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--dark-green);
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: var(--dark-green);
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.8;
+    }
+
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .partner-card {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-sm);
+      padding: 30px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .partner-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .partner-logo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: var(--light-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+      overflow: hidden;
+      border: 3px solid var(--yellow);
+    }
+
+    .partner-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .partner-info h3 {
+      color: var(--dark-green);
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+
+    .partner-info p {
+      color: var(--dark-green);
+      opacity: 0.8;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .contact-number {
+      display: flex;
+      align-items: center;
+      color: var(--dark-green);
+      font-weight: 500;
+      text-decoration: none;
+      transition: var(--transition);
+      margin-top: 10px;
+    }
+
+    .contact-number i {
+      margin-right: 8px;
+      color: var(--yellow);
+    }
+
+    .impact-section {
+      background-color: var(--light-green);
+      padding: 80px 0;
+      color: var(--dark-green);
+      text-align: center;
+    }
+
+    .impact-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 50px;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+      min-width: 200px;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--yellow);
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background-color: var(--dark-green);
+      color: var(--white);
+      padding: 60px 0 20px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .connections-hero h1 {
+        font-size: 2.2rem;
+      }
+     
+      .partner-grid {
+        grid-template-columns: 1fr;
+      }
+     
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="container">
+      <div class="logo">
+        <img src="C:\Users\POOJA\Desktop\WDL_Project\logo.jpg" alt="Cure Pet">
+      </div>
+      <ul class="nav-links">
+        <li><a href="C:\Users\POOJA\Desktop\WDL_Project\home.html">Home</a></li>
+        <li><a href="C:\Users\POOJA\Desktop\WDL_Project\connections.html">Connections</a></li>
+        <li><a href="C:\Users\POOJA\Desktop\WDL_Project\about.html">About</a></li>
+        <li><a href="C:\Users\POOJA\Desktop\WDL_Project\contact.html" class="btn">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <section class="connections-hero">
+      <div class="container">
+        <h1>Our Valued Connections</h1>
+        <p>Collaborating with leading NGOs and rescue centers to create a better world for pets in need</p>
+      </div>
+    </section>
+
+    <section class="partners-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Rescue Partners</h2>
+          <p>We work closely with these dedicated organizations to save and rehabilitate animals</p>
+        </div>
+       
+        <div class="partner-grid">
+          <div class="partner-card">
+            <div class="partner-logo">
+              <img src="https://tse2.mm.bing.net/th/id/OIP.64kgfZWljgMnYHzfdLrCEgHaHa?rs=1&pid=ImgDetMain" alt="Paws Rescue Logo">
+            </div>
+            <div class="partner-info">
+              <h3>Paws Rescue</h3>
+              <p>Specializing in emergency rescues and rehabilitation of abused animals since 2012.</p>
+              <div class="contact-number">
+                <i class="fas fa-phone"></i> +1 (555) 123-4567
+              </div>
+            </div>
+          </div>
+         
+          <div class="partner-card">
+            <div class="partner-logo">
+              <img src="https://dayoneservices.org/wp-content/uploads/2023/08/Safe-Haven-Logo.png" alt="Safe Haven Logo">
+            </div>
+            <div class="partner-info">
+              <h3>Safe Haven</h3>
+              <p>Providing sanctuary and medical care for abandoned pets across the region.</p>
+              <div class="contact-number">
+                <i class="fas fa-phone"></i> +1 (555) 234-5678
+              </div>
+            </div>
+          </div>
+         
+          <div class="partner-card">
+            <div class="partner-logo">
+              <img src="https://tse2.mm.bing.net/th/id/OIP.T6w-t1y7qgpgwJqnXp_GAQHaEe?w=2560&h=1546&rs=1&pid=ImgDetMain" alt="Furry Friends Logo">
+            </div>
+            <div class="partner-info">
+              <h3>Furry Friends</h3>
+              <p>Dedicated to finding forever homes for stray and abandoned animals.</p>
+              <div class="contact-number">
+                <i class="fas fa-phone"></i> +1 (555) 345-6789
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="partners-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>NGO Collaborations</h2>
+          <p>Strategic partnerships with national and international animal welfare organizations</p>
+        </div>
+       
+        <div class="partner-grid">
+          <div class="partner-card">
+            <div class="partner-logo">
+              <img src="https://static.vecteezy.com/system/resources/previews/006/470/726/original/animal-pet-logo-template-vector.jpg" alt="Animal Hope Logo">
+            </div>
+            <div class="partner-info">
+              <h3>Animal Hope</h3>
+              <p>National organization working on policy changes and large-scale rescue operations.</p>
+              <div class="contact-number">
+                <i class="fas fa-phone"></i> +1 (555) 456-7890
+              </div>
+            </div>
+          </div>
+         
+          <div class="partner-card">
+            <div class="partner-logo">
+              <img src="https://tse1.mm.bing.net/th/id/OIP.hgoEwWcW5gaH-ullyw2ligAAAA?w=300&h=200&rs=1&pid=ImgDetMain" alt="Pet Care Alliance Logo">
+            </div>
+            <div class="partner-info">
+              <h3>Pet Care Alliance</h3>
+              <p>Network of veterinary professionals providing pro-bono services to rescued animals.</p>
+              <div class="contact-number">
+                <i class="fas fa-phone"></i> +1 (555) 567-8901
+              </div>
+            </div>
+          </div>
+         
+          <div class="partner-card">
+            <div class="partner-logo">
+              <img src="https://tse4.mm.bing.net/th/id/OIP.hpEXeptON6Yhy0Mjrg1vbwHaHa?rs=1&pid=ImgDetMain" alt="Hope For Pets Logo">
+            </div>
+            <div class="partner-info">
+              <h3>Hope For Pets</h3>
+              <p>International NGO focused on animal rights and humane education programs.</p>
+              <div class="contact-number">
+                <i class="fas fa-phone"></i> +1 (555) 678-9012
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Collective Impact</h2>
+          <p>Through these partnerships, we've been able to make a significant difference in the lives of animals</p>
+        </div>
+       
+        <div class="impact-stats">
+          <div class="stat-item">
+            <div class="stat-number">1,200+</div>
+            <div class="stat-label">Rescues This Year</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">85%</div>
+            <div class="stat-label">Adoption Rate</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Partner Organizations</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Emergency Support</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Cure Pet's. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
